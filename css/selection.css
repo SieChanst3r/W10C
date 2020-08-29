@@ -1,0 +1,22 @@
+#battle-zone {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+h1 {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+img {
+    height: 300px;
+}
+
+h2 {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}

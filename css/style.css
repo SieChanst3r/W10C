@@ -11,17 +11,9 @@ h1 {
     width: 100%;
 }
 
-
-/* 
 body {
     display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding: 10vh;
-    margin: 25px;
-} */
+}
 
 #pokemon {
     display: grid;
@@ -32,4 +24,10 @@ body {
 
 img {
     height: 175px;
+}
+
+h2 {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
 }
