@@ -11,17 +11,31 @@
 <body>
     <h1>Battle!</h1>
     <div id="battle-zone">
-        <div id="user-selection">
-            <img src="" alt="">
-            <h2></h2>
+        <div id="userSelection">
+            <img src="" alt="Image of Pokemon that User selected">
+            <h2>User Selection</h2>
+            <h4 id="userHP">100/100</h4>
+            <div id="attackButtons">
+                <button id="attackOne">Attack 1</button>
+                <button id="attackTwo">Attack 2</button>
+                <button id="attackThree">Attack 3</button>
+                <button id="attackFour">Attack 4</button>
+            </div>
+        </div>
+
+        <div>
+            <h3>VS</h3>
         </div>
 
         <div id="enemy-pokemon">
             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="Image of MewTwo">
+            <h4 id="enemyHP">100/100</h4>
             <h2>MewTwo</h2>
         </div>
     </div>
-
+    <div id="returnAndRemove">
+        <button onclick="clearSelection()">Make New Selection</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="../js/selection.js"></script>
 </body>
