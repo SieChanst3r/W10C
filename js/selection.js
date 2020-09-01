@@ -5,11 +5,11 @@ function clearSelection(returnAndRemove) {
     Cookies.remove('trackEnemyHealth');
 }
 
-var userHealth = document.getElementById('userHP')
-var enemyHealth = document.getElementById('enemyHP')
+var userHealth = document.getElementById('userHP');
+var enemyHealth = document.getElementById('enemyHP');
 
 var userSelection = Cookies.get('selection');
-var pokemon = Cookies.get('pokemon')
+var pokemon = Cookies.get('pokemon');
 
 var userHealth = Cookies.get('trackUserHealth');
 var userHealthElement = document.getElementById('userHP');
