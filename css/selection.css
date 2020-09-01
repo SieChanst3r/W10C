@@ -7,7 +7,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 h1 {
@@ -35,6 +35,14 @@ h2 {
 }
 
 #enemyHP {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+#winLoseContainer {
     display: grid;
     justify-items: center;
     align-items: center;

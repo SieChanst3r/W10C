@@ -1,12 +1,9 @@
 function clearSelection(returnAndRemove) {
     Cookies.remove('selection');
     window.open("index.html", "_self");
+    Cookies.remove('trackUserHealth');
+    Cookies.remove('trackEnemyHealth');
 }
-
-// userHealth.innerHTML = userHealth;
-// enemyHealth.innerHTML = enemyHealth;
-
-
 
 var userHealth = document.getElementById('userHP')
 var enemyHealth = document.getElementById('enemyHP')
@@ -14,36 +11,65 @@ var enemyHealth = document.getElementById('enemyHP')
 var userSelection = Cookies.get('selection');
 var pokemon = Cookies.get('pokemon')
 
-var userHealth = 100;
-var enemyHealth = 100;
+var userHealth = Cookies.get('trackUserHealth');
+var userHealthElement = document.getElementById('userHP');
+var enemyHealth = Cookies.get('trackEnemyHealth');
+var enemyHealthElement = document.getElementById('enemyHP');
+
+if (userHealth == undefined) {
+    userHealth = 100;
+}
+if (enemyHealth == undefined) {
+    enemyHealth = 100;
+}
+
+userHealthElement.innerHTML = userHealth;
+enemyHealthElement.innerHTML = enemyHealth;
 
 function attackOne() {
     userHealth = userHealth - 25;
     enemyHealth = enemyHealth - 30;
-    userHealth.innerHTML = userHealth;
-    enemyHealth.innerHTML = enemyHealth;
+    userHealthElement.innerHTML = userHealth;
+    enemyHealthElement.innerHTML = enemyHealth;
+    checker()
 }
 
 function attackTwo() {
     userHealth = userHealth - 30;
     enemyHealth = enemyHealth - 15;
-    userHealth.innerHTML = userHealth;
-    enemyHealth.innerHTML = enemyHealth;
+    userHealthElement.innerHTML = userHealth;
+    enemyHealthElement.innerHTML = enemyHealth;
+    checker()
 }
 
 function attackThree() {
     userHealth = userHealth - 15;
     enemyHealth = enemyHealth - 34;
-    userHealth.innerHTML = userHealth;
-    enemyHealth.innerHTML = enemyHealth;
+    userHealthElement.innerHTML = userHealth;
+    enemyHealthElement.innerHTML = enemyHealth;
+    checker()
 }
 
 function attackFour() {
     userHealth = userHealth - 23;
     enemyHealth = enemyHealth - 15;
-    userHealth.innerHTML = userHealth;
-    enemyHealth.innerHTML = enemyHealth;
+    userHealthElement.innerHTML = userHealth;
+    enemyHealthElement.innerHTML = enemyHealth;
+    checker()
 }
+
+function checker() {
+    var winLose = document.getElementById('winLoseContainer');
+    if (userHealthElement.innerHTML <= 0) {
+        document.getElementById('winLoseContainer').innerHTML = '<h4>You Lost!</h4>';
+    }
+    if (enemyHealthElement.innerHTML <= 0) {
+        document.getElementById('winLoseContainer').innerHTML = '<h4>You Won!</h4>';
+    }
+    Cookies.set('trackUserHealth', userHealth);
+    Cookies.set('trackEnemyHealth', enemyHealth);
+}
+
 
 if (userSelection == 'Grookey') {
     document.getElementById('userImage').innerHTML = "<img src='https://vignette.wikia.nocookie.net/pokemon/images/9/93/810Grookey.png/revision/latest?cb=20200627181002'>";
